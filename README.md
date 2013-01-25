@@ -43,7 +43,7 @@ To test the example module:
 Then use in your module like so:
 
 ```javascript
-define(["sinon-plugin!someModule], function(wrappedModule) {
+define(["sinon-plugin!someModule"], function(wrappedModule) {
 
     var stubbedObject = wrappedModule.stub;
     var theModule = wrappedModule.module;
@@ -52,7 +52,7 @@ define(["sinon-plugin!someModule], function(wrappedModule) {
 ```
 
 ```javascript
-define(["sinon-plugin!someModule#stub#someMethod], function(module) {
+define(["sinon-plugin!someModule#stub#someMethod"], function(module) {
 
     //will create a stub for just the method
 
@@ -63,7 +63,7 @@ define(["sinon-plugin!someModule#stub#someMethod], function(module) {
 ```
 
 ```javascript
-define(["sinon-plugin!someModule#spy#someMethod], function(module) {
+define(["sinon-plugin!someModule#spy#someMethod"], function(module) {
 
     //will create a spy for the method
 
