@@ -1,0 +1,46 @@
+<html>
+<head><title>Sinon Require JS Plugin</title>
+    <link rel="stylesheet" href="vendor/mocha/mocha.css"/>
+</head>
+
+<body>
+
+    <div id="mocha"></div>
+
+    <script src="vendor/require/require-jquery.min.js"></script>
+    <script type="text/javascript">
+
+        requirejs.config({
+            shim : {
+                sinon : {
+                    exports : "sinon"
+                },
+                chai : {
+                    exports : "chai"
+                },
+                mocha : {
+                    exports : "mocha",
+                    init : function() {
+                        mocha.ui('bdd');
+                    }
+                }
+            },
+            paths:{
+                "sinon" : "vendor/sinon/sinon",
+                "sinon-helper" : "/sinon-require-plugin",
+                "mocha" : "vendor/mocha/mocha-1.4.2",
+                "chai" : "vendor/chai/chai-1.4.0"
+            }
+
+        });
+
+        require(["chai", "mocha", "index"], function(chai, mocha) {
+            mocha.reporter('html');
+            mocha.run();
+        });
+
+    </script>
+
+</body>
+</html>
+
